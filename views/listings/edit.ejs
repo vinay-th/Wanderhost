@@ -1,0 +1,76 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1>Edit for listing of <%= listing._id %></h1>
+      <form
+        action="http://localhost:8080/edit/<%= listing._id %>?_method=PATCH"
+        method="post"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Enter title: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="listing[title]"
+            value="<%= listing.title %>"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Enter location:</label>
+          <input
+            class="form-control"
+            type="text"
+            name="listing[location]"
+            value="<%= listing.location %>"
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-8">
+            <label for="country" class="form-label">Enter country:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="listing[country]"
+              value="<%= listing.country %>"
+            />
+          </div>
+          <div class="mb-3 col-4">
+            <label for="price" class="form-label">Enter price:</label>
+            <input
+              class="form-control"
+              type="number"
+              name="listing[price]"
+              value="<%= listing.price %>"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Enter description:</label>
+          <textarea
+            class="form-control"
+            id="desc"
+            type="text"
+            name="listing[description]"
+          >
+<%= listing.description %></textarea
+          >
+        </div>
+        <div class="row">
+          <div class="col-6 btns-edit">
+        <button class="btn btn-edit btn-sub btn-dark">Submit changes</button>
+      </div>
+      </form>
+      <div class="col-6 btns-edit">
+      <form
+        action="http://localhost:8080/edit/<%= listing._id %>?_method=DELETE"
+        method="post"
+      >
+        <button class="btn btn-edit btn-del btn-danger">
+          Delete the listing
+        </button>
+      </form>
+      </div>
+    </div>
+  </div>
+</body>

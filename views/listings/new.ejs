@@ -1,0 +1,69 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+  <div class="row new-form">
+    <div class="col-8 offset-2">
+      <h1>Create a new listing</h1>
+  <div class="form-fields mb-3">
+    <form action="/listings" method="post">
+      <label for="title" class="form-label">Enter your title:</label>
+      <input
+      class="form-control"
+        type="text"
+        name="listing[title]"
+        id="title"
+        placeholder="Enter title"
+      />
+      
+  </div>
+  <div class="form-fields mb-3">
+      <label for="desc" class="form-label">Enter description:</label>
+      <textarea class="form-control" name="listing[description]" placeholder="Enter description" id="desc"></textarea>
+      
+      <label for="image" class="form-label">Image url:</label>
+      <input
+      class="form-control"
+        type="text"
+        name="listing[image]"
+        id="image"
+        placeholder="Enter image url"
+      />
+      
+  </div>
+  <div class="row">
+  <div class="form-fields mb-3 col-md-4">
+      <label for="price" class="form-label">Enter price:</label>
+      <input
+      class="form-control"
+        type="number"
+        name="listing[price]"
+        id="price"
+        placeholder="Enter price"
+      />
+  </div>
+  <div class="form-fields mb-3 col-md-8">
+      <label for="location" class="form-label">Enter location:</label>
+      <input
+      class="form-control"
+        type="text"
+        name="listing[location]"
+        id="location"
+        placeholder="Enter location"
+      />
+  </div>
+</div>
+  <div class="form-fields mb-3">
+      <label for="country" class="form-label">Enter country:</label>
+      <input
+      class="form-control"
+        type="text"
+        name="listing[country]"
+        id="country"
+        placeholder="Enter country"
+      />
+      
+  </div>
+    <button class="btn btn-lg add-btn">Add</button>
+  </form>
+  </div>
+</div>
+</body>
