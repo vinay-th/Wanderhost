@@ -18,7 +18,7 @@ To get started with Wanderhost, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/wanderhost.git
+    git clone https://github.com/vinay-th/wanderhost.git
     ```
 
 2. **Navigate to the project directory**:
