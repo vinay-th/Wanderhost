@@ -4,7 +4,7 @@ const path = require("path");
 const port = 8080;
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
-const Listing = require("../AirBNB/models/listing.js");
+const Listing = require("../Wanderhost/models/listing.js");
 const ejsMate = require("ejs-mate");
 
 app.listen(port, () => {
@@ -88,4 +88,10 @@ app.delete("/edit/:id", async (req, res) => {
   await Listing.findByIdAndDelete(id);
   console.log("Deleted successfully");
   res.redirect(`/listings`);
+});
+
+// error handling
+
+app.use((err, req, res, next) => {
+  res.send("Some error occurred");
 });
