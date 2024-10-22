@@ -3,7 +3,12 @@
   <div class="row new-form">
     <div class="col-8 offset-2">
       <h1>Create a new listing</h1>
-      <form novalidate action="/listings" method="post" class="needs-validation">
+      <form
+        novalidate
+        action="/listings"
+        method="post"
+        class="needs-validation"
+      >
         <div class="form-fields mb-3">
           <label for="title" class="form-label">Enter your title:</label>
           <input
@@ -14,46 +19,40 @@
             placeholder="Enter title"
             required
           />
-          <div class="valid-feedback">
-            Title looks good.
-          </div>
-          <div class="invalid-feedback">
-            Please enter a title.
-          </div>
+          <div class="valid-feedback">Title looks good.</div>
+          <div class="invalid-feedback">Please enter a title.</div>
         </div>
         <div class="form-fields mb-3">
           <label for="desc" class="form-label">Enter description:</label>
-          <textarea class="form-control" name="listing[description]" placeholder="Enter description" id="desc" ></textarea>
-          <div class="invalid-feedback">
-            Please enter a description.
-          </div>
+          <textarea
+            class="form-control"
+            name="listing[description]"
+            placeholder="Enter description"
+            id="desc"
+          ></textarea>
+          <div class="invalid-feedback">Please enter a description.</div>
           <label for="image" class="form-label">Image url:</label>
           <input
             class="form-control"
             type="text"
             name="listing[image][url]"
             id="image"
-            placeholder="Enter image url"
+            placeholder="Enter image"
             required
           />
-          <div class="invalid-feedback">
-            Please enter an image URL.
-          </div>
+          <div class="invalid-feedback">Please enter an image URL.</div>
         </div>
         <div class="row">
           <div class="form-fields mb-3 col-md-4">
             <label for="price" class="form-label">Enter price:</label>
             <input
               class="form-control"
-              
               name="listing[price]"
               id="price"
               placeholder="Enter price"
               required
             />
-            <div class="invalid-feedback">
-              Please enter a price.
-            </div>
+            <div class="invalid-feedback">Please enter a price.</div>
           </div>
           <div class="form-fields mb-3 col-md-8">
             <label for="location" class="form-label">Enter location:</label>
@@ -65,9 +64,7 @@
               placeholder="Enter location"
               required
             />
-            <div class="invalid-feedback">
-              Please enter a location.
-            </div>
+            <div class="invalid-feedback">Please enter a location.</div>
           </div>
         </div>
         <div class="form-fields mb-3">
@@ -80,9 +77,7 @@
             placeholder="Enter country"
             required
           />
-          <div class="invalid-feedback">
-            Please enter a country.
-          </div>
+          <div class="invalid-feedback">Please enter a country.</div>
         </div>
         <button class="btn btn-lg add-btn" type="submit">Add</button>
       </form>
@@ -94,13 +89,17 @@
       'use strict';
       var forms = document.querySelectorAll('.needs-validation');
       Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
+        form.addEventListener(
+          'submit',
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          },
+          false
+        );
       });
     })();
   </script>
